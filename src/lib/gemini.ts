@@ -17,7 +17,7 @@ const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
   generationConfig,
   systemInstruction:
-    "You are a software tester. You have been given screenshots of an application. Analyse the various elements in the screenshots and answer the following questions.",
+    "You are a software tester. You will be given screenshots of an application. Analyse the various elements in the screenshots and answer the following questions in a precise manner. This information will be used by developers to write test cases for the application.",
 });
 
 const toBase64 = (file: File): Promise<string> =>
@@ -73,7 +73,7 @@ export async function runGemini(context = "", screenshots: FileList) {
       properties: {
         screenshotNo: {
           type: SchemaType.NUMBER,
-          description: "The screenshot number.",
+          description: "The screenshot number starting from 1.",
         },
         screenshotTitle: {
           type: SchemaType.STRING,
@@ -111,7 +111,7 @@ export async function runGemini(context = "", screenshots: FileList) {
       properties: {
         screenshotNo: {
           type: SchemaType.NUMBER,
-          description: "The screenshot number.",
+          description: "The screenshot number starting from 1.",
         },
         screenshotTitle: {
           type: SchemaType.STRING,
@@ -153,7 +153,7 @@ export async function runGemini(context = "", screenshots: FileList) {
               steps: {
                 type: SchemaType.ARRAY,
                 items: { type: SchemaType.STRING },
-                description: "The steps for the test case.",
+                description: "The precise steps for the test case.",
               },
               data: {
                 type: SchemaType.ARRAY,
@@ -194,7 +194,7 @@ export async function runGemini(context = "", screenshots: FileList) {
 
   return {
     context,
-    screenshots: Array.from(screenshots),
+    screenshots,
     descriptions,
     testCases,
   };

@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+# TestGen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This is a simple test generator that uses screenshots to describe the test cases. It is a simple tool that can be used to generate test cases for a given application. The tool is designed to be used by developers and testers to generate test cases for their applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It uses a Mutli-Modal LLM model to generate test cases. The model is trained on a dataset of screenshots and their corresponding test cases. The model is able to generate test cases for a given screenshot by using the information in the screenshot.
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js
+- Google Gemini (Multi-Modal LLM)
+- React.js (Vite)
+- Tailwind CSS
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Requirements: Node.js
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Clone the repository
+1. Open the terminal in the project directory
+1. Run `npm install`
+1. Run `npm run dev`
+1. Open `http://localhost:5173` in your browser
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Usage
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Upload one or more screenshots
+1. Provide additional information (optional)
+1. Click on the "Describe Testing Instructions" button
+1. View the generated test cases
+
+## Acknowledgements
+
+This project was done in fulfillment for the Case Study Task for Myracle.io internship interview process.

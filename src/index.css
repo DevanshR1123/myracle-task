@@ -15,6 +15,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  scroll-behavior: smooth;
 }
 
 @layer base {
@@ -79,7 +81,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply scroll-smooth bg-background text-foreground;
   }
 }
 

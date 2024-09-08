@@ -1,4 +1,5 @@
 import TestForm from "~/components/TestForm";
+import { ArrowUpSquare } from "lucide-react";
 
 function App() {
   return (
@@ -11,9 +12,12 @@ function App() {
       <main className="grid p-8">
         <TestForm />
       </main>
-      <footer className="bg-secondary p-2 text-center text-secondary-foreground">
+      <footer className="bg-muted p-2 text-center text-muted-foreground">
         For <a href="https://www.myracle.io/">Myracle.io</a> Case Study Task
       </footer>
+      <a href="#" className="fixed bottom-4 right-4 rounded bg-ring p-2 text-secondary-foreground">
+        <ArrowUpSquare size={32} />
+      </a>
     </>
   );
 }

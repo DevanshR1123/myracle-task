@@ -28,7 +28,7 @@ export interface ScreenshotTestCase {
 
 export interface GeminiResponse {
   context: string;
-  screenshots: File[];
+  screenshots: FileList;
   descriptions: ScreenshotDescription[];
   testCases: ScreenshotTestCase[];
 }
